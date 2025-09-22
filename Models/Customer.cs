@@ -1,10 +1,16 @@
 namespace riwi_music.Models;
 
-class Customer : Person
+public class Customer : Person
 {
-    public static void BuyTicket()
+    public List<Ticket> Purchases { get; set; } = new();
+
+    public Customer(string name, string lastname, string email, string password)
+        : base(name, lastname, email, password)
     {
-            
     }
-    
+
+    public void BuyTicket(Ticket ticket)
+    {
+        Purchases.Add(ticket);
+    }
 }

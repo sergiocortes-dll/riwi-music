@@ -1,28 +1,23 @@
 namespace riwi_music.Models;
 
-class Person
+public class Person
 {
-    private int Id { get; set; }
-    private string Name { get; set; }
-    private string Lastname { get; set; }
-    private string Email { get; set; }
-    private string Password { get; set; }
+    protected static int IdCounter = 1;
 
-    public static void Login()
-    {
-        
-    }
+    public int Id { get; protected set; }
+    public string Name { get; set; }
+    public string Lastname { get; set; }
+    public string Email { get; set; }
+    public string Password { get; set; }
 
-    public void Register(string name, string lastname, string email, string password, string type)
+    protected Person() { }
+
+    protected Person(string name, string lastname, string email, string password)
     {
+        Id = IdCounter++;
         Name = name;
         Lastname = lastname;
         Email = email;
         Password = password;
-    }
-
-    public static void Logout()
-    {
-        
     }
 }
