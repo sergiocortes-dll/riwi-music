@@ -94,7 +94,7 @@ namespace riwi_music.Models
             return true;
         }
 
-        // ---------- Clientes ----------
+        //  Clientes 
         public static Customer RegisterOrGetCustomer(string name, string lastname, string email, string password)
         {
             var existing = Customers.FirstOrDefault(c => string.Equals(c.Email, email, StringComparison.OrdinalIgnoreCase));
@@ -148,7 +148,7 @@ namespace riwi_music.Models
             return true;
         }
 
-        // ---------- Artistas ----------
+        //  Artistas 
         public static Artist RegisterOrGetArtist(string name, string lastname, string email, string password, string genre)
         {
             var existing = Artists.FirstOrDefault(a => string.Equals(a.Email, email, StringComparison.OrdinalIgnoreCase));
